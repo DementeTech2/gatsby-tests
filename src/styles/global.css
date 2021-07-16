@@ -1,0 +1,175 @@
+body {
+  background: #252525;
+  color: #fff;
+  font-family: Lato, helvetica, sans-serif;
+}
+
+.app {
+  border: 2px solid #111;
+  padding: 2em;
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 26%, rgba(99,99,244,1) 100%);
+}
+
+p.caption {
+  font-size: 10px;
+}
+
+h4 {
+  font-weight: 700;
+}
+
+.modal-content {
+  border: 2px solid #E1B000;
+  padding: 2em;
+  background: #1A1A1A;
+}
+
+.container {
+  width: 1200px;
+  max-width: 80%;
+  margin: 30px auto 0;
+}
+
+img.banner {
+  border: 3px solid white;
+  margin: 1em 0 3em;
+  width: 100%;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 43px;
+}
+
+p {
+  font-size: 18px;
+}
+
+a {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #e1b000;
+}
+
+.main {
+  float: left;
+  width: 50%;
+}
+.sidebar {
+  float: right;
+  width: 50%;
+  padding-left: 2em;
+  text-align: center;
+}
+
+.button {
+  background: linear-gradient(to right, #f7971e, #ffd200); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 20px 30px;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  line-height: 1;
+  border: 0 none;
+}
+
+.button:hover, .button:active, .button:focus {
+  text-decoration: none;
+  transform: scale(1.1);
+  color: #fff;
+}
+
+.donate-modal {
+  display: none;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+button.close {
+  float: right;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 none;
+  filter: alpha(opacity=20);
+  opacity: 1.0;
+  padding: 10px;
+  margin-right: 8px;
+}
+
+button.close:hover {
+  color: #FFF;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+
+.donation-thank-you {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 90%;
+    max-width: 90%;
+    margin-top: 30px;
+  }
+  .sidebar {
+    width: 100%;
+    float: left;
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    margin-top: 2em;
+  }
+  .main {
+    width: 100%;
+  }
+}
+
+.Header {
+  margin: 10px
+}
+
+nav.NavBar {
+  display: flex;
+  justify-content: center;
+}
+
+nav.NavBar .NavLink{
+  display: flex;
+  padding: 5px 10px;
+  margin: 0 10px;
+  border: 1px solid white;
+  text-decoration: none;
+  border-radius: 3px;
+}
+nav.NavBar .NavLink:hover{
+  box-shadow: 0px 0px 15px gray;
+}
+
+nav.NavBar .NavLink.active{
+  border-color: aqua;
+  color: aqua;
+}
+
+.preNot:before {
+  content: "Not ";
+}
+.insert_change:empty:before, .rearrange_change:empty:before {
+  content: "Not Ok"
+}
+
