@@ -1,56 +1,48 @@
-import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
-import '../styles/index.css';
 
-function Index() {
-  const [date, setDate] = useState(null);
-  useEffect(() => {
-    async function getDate() {
-      const res = await fetch('/api/date');
-      const newDate = await res.text();
-      setDate(newDate);
-    }
-    getDate();
-  }, []);
+import * as React from "react"
+import Layout from "../components/Layout";
+
+export default function Home() {
+
+  const [dummyList, setDummy] = React.useState([]);
+
+  React.useEffect(() => {
+    const interval = setTimeout(() => setDummy(["Lazy Test 1", "Lazy Test 2", "Lazy Test 3"]), 3000);
+    return function cleanup() {
+      clearInterval(interval)
+    };
+  });
+
   return (
-    <main>
-      <Helmet>
-        <title>Gatsby + Node.js (TypeScript) API</title>
-      </Helmet>
-      <h1>Gatsby + Node.js (TypeScript) API</h1>
-      <h2>
-        Deployed with{' '}
-        <a
-          href="https://vercel.com/docs"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Vercel
-        </a>
-        !
-      </h2>
-      <p>
-        <a
-          href="https://github.com/vercel/vercel/tree/main/examples/gatsby"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          This project
-        </a>{' '}
-        is a <a href="https://www.gatsbyjs.org/">Gatsby</a> app with two
-        directories, <code>/src</code> for static content and <code>/api</code>{' '}
-        which contains a serverless{' '}
-        <a href="https://nodejs.org/en/">Node.js (TypeScript)</a> function. See{' '}
-        <a href="/api/date">
-          <code>api/date</code> for the Date API with Node.js (TypeScript)
-        </a>
-        .
-      </p>
-      <br />
-      <h2>The date according to Node.js (TypeScript) is:</h2>
-      <p>{date ? date : 'Loading date...'}</p>
-    </main>
-  );
-}
+    <Layout>
+      <main id="index_main" className="app" >
+        <h1> Index Page </h1>
+        <table id="index_table" style={{width:"100%"}}>
+          <tbody>
+            <tr>
+              <td>Normal Change</td>
+              <td className="normal_change" >Not Ok</td>
+            </tr>
+            <tr>
+              <td>Class Change</td>
+              <td className="class_change preNot">Ok</td>
+            </tr>
+            <tr>
+              <td>Remove Change</td>
+              <td ><span className="remove_change">Not</span> Ok</td>
+            </tr>
 
-export default Index;
+            {dummyList.map((value, index) => {
+              return (
+                <tr key={index} className="lazy_change">
+                  <td>{value.toString()}</td>
+                  <td >Not Ok</td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </main>
+    </Layout>
+  )
+}
